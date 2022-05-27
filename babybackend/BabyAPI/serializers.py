@@ -6,6 +6,7 @@ class BabySerializer(serializers.ModelSerializer):
     class Meta:
         model = Baby
         fields = ('BabyEntryId',
+                  'Date',
                   'Pipi',
                   'Caca',
                   'Milk',

@@ -22,6 +22,7 @@
       />
       <label class="form-check-label" for="flexCheckDefault"> Lait </label>
 
+      <span id="rangeval">120<!-- Default value --></span>
       <input
         type="range"
         class="form-control-range"
@@ -31,21 +32,28 @@
         max="200"
         value="120"
         onmousemove="document.getElementById('rangeval').innerText = document.getElementById('formControlRange').value"
+        ontouchmove="document.getElementById('rangeval').innerText = document.getElementById('formControlRange').value"
       />
-      <span id="rangeval">120<!-- Default value --></span>
     </div>
 
     <div class="mt-4 col-auto">
       <button
         type="submit"
         (click)="AddData()"
-        class="btn btn-primary btn-lg float-lg-right"
+        class="btn btn-primary btn-lg float-lg-right submit"
       >
         Submit
       </button>
     </div>
   </div>
-  <div style="display: block">
-    <canvas baseChart> </canvas>
-  </div>
+
+  <label class="form-check-label" for="flexCheckDefault"> Combien de fois par jour:  </label>
+  <label class="form-check-label" for="flexCheckDefault"> {{ BabyInformations.TotalCount }} </label>
+  <br>
+  <label class="form-check-label" for="flexCheckDefault"> Quantite:  </label>
+  <label class="form-check-label" for="flexCheckDefault"> {{ BabyInformations.TotalQuantity }} </label>
+  <br>
+  <label class="form-check-label" for="flexCheckDefault"> Derniere prise:  </label>
+  <label class="form-check-label" for="flexCheckDefault"> {{ BabyInformations.LastDate }} </label>
+
 </div>
