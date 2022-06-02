@@ -8,7 +8,7 @@ import { Baby } from './baby';
 })
 export class CommunicationService {
 
-  readonly API_URL = "http://192.168.0.100:8000";
+  //readonly API_URL = "http://192.168.0.100:8000";
 
   constructor(private http:HttpClient) { }
 
@@ -21,10 +21,15 @@ export class CommunicationService {
     data.MilkQuantity = milkVal;
     console.log(data)
 
-    return this.http.post(this.API_URL + "/baby/", data);
+    return this.http.post(location.origin + ":8000/baby/", data);
+    //return this.http.post(this.API_URL + "/baby/", data);
   }
 
   GetInformations(){
-    return this.http.get(this.API_URL + "/baby/");
+    console.log("test test")
+    console.log(location.origin);
+    console.log(location.href);
+
+    return this.http.get(location.origin + ":8000/baby/");
   }
 }

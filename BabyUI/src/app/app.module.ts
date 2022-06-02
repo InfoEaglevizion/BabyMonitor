@@ -8,7 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommunicationService } from './communication.service';
 import {HttpClientModule} from '@angular/common/http';
 
-//import { NgChartsModule } from 'ng2-charts';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    //NgChartsModule
+    NgChartsModule
   ],
   providers: [CommunicationService],
   bootstrap: [AppComponent]

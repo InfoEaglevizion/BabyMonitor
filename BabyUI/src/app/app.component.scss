@@ -1,15 +1,15 @@
 .entry-form{
-    background-color: white;
+    display: inline-block;
+    background-color: gray;
     border-color: black;
     border-style: solid !important;
     border: 5px;
     position: relative;
-    width: 40%;
-    height: 400px;
-    left: 30%;
-    top: 100px;
+    width: 400px;
+    height: 380px;
+    margin: 10px;
+    left: 10px;
     font-size: 25px;
-    min-width: 400px;
 }
 
 body {  
@@ -24,10 +24,11 @@ body {
         border: 5px;
         position: relative;
         width: 40%;
-        height: 400px;
-        left: 2%;
-        top: 100px;
+        height: 320px;
+        left: 1%;
+        margin: 2px;
         font-size: 25px;
         min-width: 400px;
     }
 }
+

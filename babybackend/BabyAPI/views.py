@@ -36,12 +36,14 @@ def babyApi(request, id=0):
         all_objects= Baby.objects.filter(Date__date__range=(start_date, end_date))
         baby_serializer = BabySerializer(all_objects, many=True)
 
+        ChartData = {}
         total_count = 0
         total_quantity = 0
         for obj in baby_serializer.data:
             total_count += 1
             total_quantity += obj["MilkQuantity"]
+            ChartData[datetime.strptime(obj["Date"], '%Y-%m-%dT%H:%M:%SZ').strftime("%H:%M:%S")] = obj["MilkQuantity"]
 
-        return JsonResponse({"TotalCount" : total_count, "TotalQuantity" : total_quantity, "LastDate": all_objects.last().Date}, safe=False)
+        return JsonResponse({"TotalCount" : total_count, "TotalQuantity" : total_quantity, "LastDate": all_objects.last().Date, "ChartData": ChartData}, safe=False)
 
 
